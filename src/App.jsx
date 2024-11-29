@@ -14,7 +14,7 @@ import '@solana/wallet-adapter-react-ui/styles.css';
 
 function App() {
 
-  const endpoint = 'https://solana-devnet.g.alchemy.com/v2/T-U_eyoZhJoRdaopW6UbWpcd53G0L6D6';
+  const endpoint = 'https://api.devnet.solana.com';
 
   return (
     <>
