@@ -138,7 +138,7 @@ function App() {
                       Developed by <a href="https://sunilsimar.me/" className="text-blue-400 hover:underline">Sunil</a>
                     </p>
                     <p className="text-xs sm:text-sm text-gray-500">
-                      © 2024 Wallet Creator. All rights reserved.
+                      © 2024 Solana Faucet. All rights reserved.
                     </p>
                   </div>
                 </footer>
