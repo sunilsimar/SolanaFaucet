@@ -1,6 +1,6 @@
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { toast } from "react-toastify";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
 
 //use wallet hook provides the wallet variable inside this component
@@ -9,6 +9,20 @@ export function Airdrop() {
     const wallet = useWallet();
     const { connection } = useConnection();
     const [isSending, setIsSending] = useState(false);
+    const { publicKey, signMessage } = useWallet();
+
+    useEffect(() => {
+        if (publicKey) {
+            wlcMsg();
+        }
+
+    }, [publicKey]);
+
+    async function wlcMsg() {
+        const message = "👋 Welcome to our platform! Please sign this message with your wallet to continue securely. Your signature ensures a safe and personalized experience. 😊"
+        const encodedMessage = new TextEncoder().encode(message);
+        await signMessage(encodedMessage);
+    }
 
     async function sendAirdropToUser() {
         try {
